@@ -18,14 +18,18 @@ descriptions = {
 	"Cyborg": "Robotics",
 	"GameCraft": "Game Development"
 }
+
 iframe1 = '<head><title>'
-iframe2 = 'IIIT-Delhi\'s '
+iframe2 = ' IIIT-Delhi\'s '
 iframe3 = ' Club</title><link rel="shortcut icon" href="favicon.png?v=2" /><meta http-equiv="Content-Type" content="text/html\; charset=utf-8" /><style type="text/css">body, html{margin: 0\; padding: 0\; height: 100\%\; overflow: hidden\;}#content{position:absolute\; left: 0\; right: 0\; bottom: 0\; top: 0px\; }</style></head><body><div id="content"><iframe width="100\%" height="100\%" frameborder="0" src="'
 iframe4 = '" /></div></body></html>'
-puts [iframe1,"foobar",iframe2,"programming",iframe3,"https://sites.google.com/a/iiitd.ac.in/foobar/",iframe4].join('')
 
+base_dir = "./club/"
 iframes.each do |key,url|
 	desc = descriptions[key]
 	output_html = [iframe1,key,iframe2,desc,iframe3,url,iframe4].join('')
-	puts output_html
+	dir = Dir.mkdir(base_dir+key.to_s.downcase) unless Dir.exist?(base_dir+key.to_s.downcase)
+	file = File.new(base_dir+key.to_s.downcase+"/index.html","a+")
+	file << output_html
+	file.close
 end
