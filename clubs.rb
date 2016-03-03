@@ -19,10 +19,6 @@ iframes = {
 		"site":	"https://sites.google.com/a/iiitd.ac.in/chess-iiitd/",
 		"description": "Chess"
 	},
-	"Cyborg": {
-		"site":	"https://sites.google.com/a/iiitd.ac.in/robotics_club/home",
-		"description": "Robotics"
-	},
 	"GameCraft": {
 		"site":	"https://gamecraftiiitd.wordpress.com/",
 		"description": "Game Development"
@@ -60,6 +56,10 @@ reverse_proxies = {
 	},
 	"ecoclub": {
 		"site": "http://eco.iiitd.club/",
+		"preserve_host": "Off"
+	},
+	"cyborg": {
+		"site":	"https://cyborgiiitd.github.io/",
 		"preserve_host": "Off"
 	}
 }
